@@ -3,7 +3,7 @@
 #define PI 3.14159265358979323846
 
 double** randm(int rows, int cols){
-                double** matrix = (double**)malloc(row * sizeof(double*));
+                double** matrix = (double**)malloc(rows * sizeof(double*));
 
                 for (int i = 0; i < rows; i++)
                     matrix[i] = (double*)malloc(cols * sizeof(double));
