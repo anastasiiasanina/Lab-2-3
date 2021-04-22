@@ -3,7 +3,7 @@
 #define PI 3.14159265358979323846
 
 double** randm(int rows, int cols){
-                double** matrix = (double**)malloc(rows * sizeof(double*));
+                double** matrix = (double**)malloc(row * sizeof(double*));
 
                 for (int i = 0; i < rows; i++)
                     matrix[i] = (double*)malloc(cols * sizeof(double));
@@ -37,23 +37,23 @@ double** randm(int rows, int cols){
             }
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-char ProgName[]="Ëàáîðàòîðíà ðîáîòà 3";
+char ProgName[]="Ã‹Ã Ã¡Ã®Ã°Ã Ã²Ã®Ã°Ã­Ã  Ã°Ã®Ã¡Ã®Ã²Ã  3";
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLine, int nCmdShow)
 {
     HWND hWnd;
     MSG lpMsg;
 
-    WNDCLASS w; //ñîçäà¸ì ýêçåìïëÿð ñòðóêòóðû WNDCLASS
+    WNDCLASS w; //Ã±Ã®Ã§Ã¤Ã Â¸Ã¬ Ã½ÃªÃ§Ã¥Ã¬Ã¯Ã«Ã¿Ã° Ã±Ã²Ã°Ã³ÃªÃ²Ã³Ã°Ã» WNDCLASS
 
-    w.lpszClassName=ProgName; //èìÿ ïðîãðàììû - îáúÿâëåíî âûøå
-    w.hInstance=hInstance; //èäåíòèôèêàòîð òåêóùåãî ïðèëîæåíèÿ
-    w.lpfnWndProc=WndProc; //óêàçàòåëü íà ôóíêöèþ îêíà
-    w.hCursor=LoadCursor(NULL, IDC_ARROW); //çàãðóæàåì êóðñîð
-    w.hIcon=0; //èêîíêè ó íàñ íå áóäåò ïîêà
-    w.lpszMenuName=0; //è ìåíþ ïîêà íå áóäåò
-    w.hbrBackground = LTGRAY_BRUSH; //WHITE_BRUSH;// öâåò ôîíà îêíà
-    w.style=CS_HREDRAW|CS_VREDRAW; //ñòèëü - ïåðåðèñîâûâàåìîå ïî õ è ïî ó
+    w.lpszClassName=ProgName; //Ã¨Ã¬Ã¿ Ã¯Ã°Ã®Ã£Ã°Ã Ã¬Ã¬Ã» - Ã®Ã¡ÃºÃ¿Ã¢Ã«Ã¥Ã­Ã® Ã¢Ã»Ã¸Ã¥
+    w.hInstance=hInstance; //Ã¨Ã¤Ã¥Ã­Ã²Ã¨Ã´Ã¨ÃªÃ Ã²Ã®Ã° Ã²Ã¥ÃªÃ³Ã¹Ã¥Ã£Ã® Ã¯Ã°Ã¨Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¿
+    w.lpfnWndProc=WndProc; //Ã³ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼ Ã­Ã  Ã´Ã³Ã­ÃªÃ¶Ã¨Ã¾ Ã®ÃªÃ­Ã 
+    w.hCursor=LoadCursor(NULL, IDC_ARROW); //Ã§Ã Ã£Ã°Ã³Ã¦Ã Ã¥Ã¬ ÃªÃ³Ã°Ã±Ã®Ã°
+    w.hIcon=0; //Ã¨ÃªÃ®Ã­ÃªÃ¨ Ã³ Ã­Ã Ã± Ã­Ã¥ Ã¡Ã³Ã¤Ã¥Ã² Ã¯Ã®ÃªÃ 
+    w.lpszMenuName=0; //Ã¨ Ã¬Ã¥Ã­Ã¾ Ã¯Ã®ÃªÃ  Ã­Ã¥ Ã¡Ã³Ã¤Ã¥Ã²
+    w.hbrBackground = LTGRAY_BRUSH; //WHITE_BRUSH;// Ã¶Ã¢Ã¥Ã² Ã´Ã®Ã­Ã  Ã®ÃªÃ­Ã 
+    w.style=CS_HREDRAW|CS_VREDRAW; //Ã±Ã²Ã¨Ã«Ã¼ - Ã¯Ã¥Ã°Ã¥Ã°Ã¨Ã±Ã®Ã¢Ã»Ã¢Ã Ã¥Ã¬Ã®Ã¥ Ã¯Ã® Ãµ Ã¨ Ã¯Ã® Ã³
     w.cbClsExtra=0;
     w.cbWndExtra=0;
 
@@ -63,25 +63,25 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
    // HWND hWnd;
     //MSG lpMsg;
 
-//Ñîçäàäèì îêíî â ïàìÿòè, çàïîëíèâ àðãóìåíòû CreateWindow
-    hWnd=CreateWindow(ProgName, //Èìÿ ïðîãðàììû
-        "Ëàáîðàòîðíà ðîáîòà 3. Âèêîíàëà Ñàí³íà À. Ì.", //Çàãîëîâîê îêíà
-        WS_OVERLAPPEDWINDOW, //Ñòèëü îêíà - ïåðåêðûâàþùååñÿ
-        400, //ïîëîæåíèå îêíà íà ýêðàíå ïî õ
-        100, //ïîëîæåíèå ïî ó
-        960, //øèðèíà
-        600, //âèñîòà
-        (HWND)NULL, //èäåíòèôèêàòîð ðîäèòåëüñêîãî îêíà
-        (HMENU)NULL, //èäåíòèôèêàòîð ìåíþ
-        (HINSTANCE)hInstance, //èäåíòèôèêàòîð ýêçåìïëÿðà ïðîãðàììû
-        (HINSTANCE)NULL); //îòñóòñòâèå äîïîëíèòåëüíûõ ïàðàìåòðîâ
+//Ã‘Ã®Ã§Ã¤Ã Ã¤Ã¨Ã¬ Ã®ÃªÃ­Ã® Ã¢ Ã¯Ã Ã¬Ã¿Ã²Ã¨, Ã§Ã Ã¯Ã®Ã«Ã­Ã¨Ã¢ Ã Ã°Ã£Ã³Ã¬Ã¥Ã­Ã²Ã» CreateWindow
+    hWnd=CreateWindow(ProgName, //ÃˆÃ¬Ã¿ Ã¯Ã°Ã®Ã£Ã°Ã Ã¬Ã¬Ã»
+        "Ã‹Ã Ã¡Ã®Ã°Ã Ã²Ã®Ã°Ã­Ã  Ã°Ã®Ã¡Ã®Ã²Ã  3. Ã‚Ã¨ÃªÃ®Ã­Ã Ã«Ã  Ã‘Ã Ã­Â³Ã­Ã  Ã€. ÃŒ.", //Ã‡Ã Ã£Ã®Ã«Ã®Ã¢Ã®Ãª Ã®ÃªÃ­Ã 
+        WS_OVERLAPPEDWINDOW, //Ã‘Ã²Ã¨Ã«Ã¼ Ã®ÃªÃ­Ã  - Ã¯Ã¥Ã°Ã¥ÃªÃ°Ã»Ã¢Ã Ã¾Ã¹Ã¥Ã¥Ã±Ã¿
+        400, //Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥ Ã®ÃªÃ­Ã  Ã­Ã  Ã½ÃªÃ°Ã Ã­Ã¥ Ã¯Ã® Ãµ
+        100, //Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥ Ã¯Ã® Ã³
+        960, //Ã¸Ã¨Ã°Ã¨Ã­Ã 
+        600, //Ã¢Ã¨Ã±Ã®Ã²Ã 
+        (HWND)NULL, //Ã¨Ã¤Ã¥Ã­Ã²Ã¨Ã´Ã¨ÃªÃ Ã²Ã®Ã° Ã°Ã®Ã¤Ã¨Ã²Ã¥Ã«Ã¼Ã±ÃªÃ®Ã£Ã® Ã®ÃªÃ­Ã 
+        (HMENU)NULL, //Ã¨Ã¤Ã¥Ã­Ã²Ã¨Ã´Ã¨ÃªÃ Ã²Ã®Ã° Ã¬Ã¥Ã­Ã¾
+        (HINSTANCE)hInstance, //Ã¨Ã¤Ã¥Ã­Ã²Ã¨Ã´Ã¨ÃªÃ Ã²Ã®Ã° Ã½ÃªÃ§Ã¥Ã¬Ã¯Ã«Ã¿Ã°Ã  Ã¯Ã°Ã®Ã£Ã°Ã Ã¬Ã¬Ã»
+        (HINSTANCE)NULL); //Ã®Ã²Ã±Ã³Ã²Ã±Ã²Ã¢Ã¨Ã¥ Ã¤Ã®Ã¯Ã®Ã«Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã»Ãµ Ã¯Ã Ã°Ã Ã¬Ã¥Ã²Ã°Ã®Ã¢
 
-//Âûâîäèì îêíî èç ïàìÿòè íà ýêðàí
+//Ã‚Ã»Ã¢Ã®Ã¤Ã¨Ã¬ Ã®ÃªÃ­Ã® Ã¨Ã§ Ã¯Ã Ã¬Ã¿Ã²Ã¨ Ã­Ã  Ã½ÃªÃ°Ã Ã­
     ShowWindow(hWnd, nCmdShow);
-//Îáíîâèì ñîäåðæèìîå îêíà
+//ÃŽÃ¡Ã­Ã®Ã¢Ã¨Ã¬ Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã¬Ã®Ã¥ Ã®ÃªÃ­Ã 
  //   UpdateWindow(hWnd);
 
-//Öèêë îäåðæàííÿ ïîâ³äîìëåíü
+//Ã–Ã¨ÃªÃ« Ã®Ã¤Ã¥Ã°Ã¦Ã Ã­Ã­Ã¿ Ã¯Ã®Ã¢Â³Ã¤Ã®Ã¬Ã«Ã¥Ã­Ã¼
 
     while(GetMessage(&lpMsg, hWnd, 0, 0)) {
             TranslateMessage(&lpMsg);
